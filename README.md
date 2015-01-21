@@ -19,6 +19,13 @@
 * `gulp protractor` para lançar seus testes E2E com transferidor
 * `gulp protractor:dist` para lançar seus testes E2E com transferidor nos arquivos dist
 
+## Instalação
+
+* Você poder baixar o arquivo aqui : https://raw.githubusercontent.com/brunoksato/input-timer-angular/master/dist/scripts/angular-input-timer.js, e adicionar no seu projeto.
+
+* Ou você pode fazer instalação via bower: bower install input-timer-angular
+
+
 ## Como utilizar o input-time-angular
   
   Só chamar o componente e já estara funcionando<br><br>
@@ -26,6 +33,11 @@
     <br><br>
   E você também pode passa uma classe para seu componente<br><br>
   `<input-timer class="input"><input-timer>`
+
+
+## Bug ou melhoria ?
+
+Nos mande pull request ou issue para melhorias e bugs.
 
 
 ## License
