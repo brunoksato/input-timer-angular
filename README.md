@@ -19,6 +19,15 @@
 * `gulp protractor` para lançar seus testes E2E com transferidor
 * `gulp protractor:dist` para lançar seus testes E2E com transferidor nos arquivos dist
 
+## Como utilizar o input-time-angular
+  
+  Só chamar o componente e já estara funcionando<br><br>
+    `<input-timer><input-timer>`
+    <br><br>
+  E você também pode passa uma classe para seu componente<br><br>
+  `<input-timer class="input"><input-timer>`
+
+
 ## License
 
 MIT
