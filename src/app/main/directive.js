@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+*  Module [inputTimerAngular]
+*
+* Modulo principal do componente
+*/
 angular.module( 'inputTimerAngular' )
   .directive('inputTimer', inputTimer);
 
@@ -39,8 +44,6 @@ angular.module( 'inputTimerAngular' )
 
           $element.on( 'keyup', function (  ) {
 
-
-
             newVal = $scope.timer;
 
             if( newVal === oldVal || $scope.timer === oldVal ) return;
@@ -77,7 +80,7 @@ angular.module( 'inputTimerAngular' )
                 }
 
                 valorAtualizado = valorAtualizado + ':';
- //debugger;
+
                 if ( valorNovo2 !== valorAntigo2 ){
 
                   if( valorAntigo2 === '00' ){
