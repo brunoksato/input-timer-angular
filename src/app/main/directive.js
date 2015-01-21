@@ -26,19 +26,20 @@ angular.module( 'inputTimerAngular' )
       require: '?ngModel',
       template: [
 
-        '<input type="text" class="{{ style }}" ng-model="timer" />'
+        '<input id="teste" type="text" class="{{ style }}" ng-model="timer" />'
 
-      ].join(''),
+      ].join( '' ),
       link: function ( $scope, $element, $attrs ) {
 
           //default
-          $scope.timer = '00:00';
+          if( $scope.timer === undefined || $scope.timer === '' )
+            $scope.timer = '00:00';
 
           var oldVal, newVal;
 
           $element.on( "keydown", function ( value ) {
 
-            oldVal = $scope.timer;
+            oldVal = $element[0].value;
 
           });
 
@@ -48,9 +49,21 @@ angular.module( 'inputTimerAngular' )
 
             if( newVal === oldVal || $scope.timer === oldVal ) return;
 
+            if( newVal === '' ){
+
+              $scope.$apply( function () {
+
+                $scope.timer = '00:00';
+
+              });
+
+              return;
+
+            }
+
             if( newVal ){
 
-              if( newVal.split(':') !== undefined ){
+              if( newVal.split(':').length > 1 ){
 
                 var valorNovo1, valorNovo2, valorAntigo1, valorAntigo2, valorAtualizado;
 
@@ -63,7 +76,7 @@ angular.module( 'inputTimerAngular' )
 
                   if( valorAntigo1 === '00' ){
 
-                    valorAtualizado = valorNovo1.substring(0, valorNovo1.length - 2);
+                    valorAtualizado = valorNovo1.substring( 0, valorNovo1.length - 2 );
 
                   }
                   else{
@@ -89,8 +102,8 @@ angular.module( 'inputTimerAngular' )
 
                     if( valorAntigo2.length === 2 ){
 
-                      var temp = valorNovo2.substring(0,1);
-                      temp = temp + valorNovo2.substring(valorNovo2.length-1,valorNovo2.length);
+                      var temp = valorNovo2.substring( 0,1 );
+                      temp = temp + valorNovo2.substring( valorNovo2.length-1,valorNovo2.length );
                       valorAtualizado = valorAtualizado + temp;
 
                     }
@@ -117,8 +130,21 @@ angular.module( 'inputTimerAngular' )
 
                     if( valorAntigo2.length === 2 ){
 
-                      var temp = valorNovo2.substring(0,1);
-                      temp = temp + valorNovo2.substring(valorNovo2.length-1,valorNovo2.length);
+                      var temp = valorNovo2.substring( 0,1 );
+                      var temp2 = valorAntigo2.substring( 1,2 );
+                      var temp3 = valorNovo2.substring( 1,2 );
+
+                      if( temp2 !== temp3 ){
+
+                        temp = temp + valorNovo2.substring( valorNovo2.length-2,valorNovo2.length-1 );
+
+                      }
+                      else{
+
+                        temp = temp + valorNovo2.substring( valorNovo2.length-1,valorNovo2.length );
+
+                      }
+
                       valorAtualizado = valorAtualizado + temp;
 
                     }
