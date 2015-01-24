@@ -32,7 +32,7 @@
     `<input-timer><input-timer>`
     <br><br>
   E você também pode passa uma classe para seu componente<br><br>
-  `<input-timer class="input"><input-timer>`
+  `<input-timer style="input"><input-timer>`
   <br><br>
   Adicionado seletor dinamico<br><br>
   `<input-timer selector="teste"><input-timer>`
