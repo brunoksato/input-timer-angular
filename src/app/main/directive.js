@@ -22,11 +22,12 @@ angular.module( 'inputTimerAngular' )
       replace: true,
       scope: {
         style: '@'
+        selector: '@'
       },
       require: '?ngModel',
       template: [
 
-        '<input id="teste" type="text" class="{{ style }}" ng-model="timer" />'
+        '<input id="{{ selector }}" type="text" class="{{ style }}" ng-model="timer" />'
 
       ].join( '' ),
       link: function ( $scope, $element, $attrs ) {
