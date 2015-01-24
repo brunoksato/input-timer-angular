@@ -33,6 +33,9 @@
     <br><br>
   E você também pode passa uma classe para seu componente<br><br>
   `<input-timer class="input"><input-timer>`
+  <br><br>
+  Adicionado seletor dinamico<br><br>
+  `<input-timer selector="teste"><input-timer>`
 
 
 ## Bug ou melhoria ?
