@@ -21,7 +21,7 @@ angular.module( 'inputTimerAngular' )
       restrict: 'E',
       replace: true,
       scope: {
-        style: '@'
+        style: '@',
         selector: '@'
       },
       require: '?ngModel',
